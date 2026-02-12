@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://mfq3t58xy2bx"]
+
+[node name="libro" type="Node3D"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0)
+size = Vector3(1, 1.5, 0.2)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.6, 0.0410101, 0, 0)
+operation = 1
+height = 1.55
+sides = 50

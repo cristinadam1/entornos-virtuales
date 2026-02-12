@@ -1,0 +1,46 @@
+[gd_scene load_steps=3 format=3 uid="uid://dcesfy0qm3yln"]
+
+[ext_resource type="PackedScene" uid="uid://bktg5f8l7pswv" path="res://silla.tscn" id="1_n27lx"]
+[ext_resource type="Script" path="res://camera_3d.gd" id="2_2xp1c"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="habitacion" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+size = Vector3(7, 4, 4)
+
+[node name="caja_interna" type="CSGBox3D" parent="habitacion"]
+operation = 2
+size = Vector3(6.9, 3.9, 3.9)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="habitacion/caja_interna"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+omni_range = 9.0
+
+[node name="puerta" type="CSGBox3D" parent="habitacion"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.4, 2)
+operation = 2
+size = Vector3(2, 3, 0.5)
+
+[node name="Silla" parent="habitacion" instance=ExtResource("1_n27lx")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -2.5, -1.5, -1)
+
+[node name="Silla5" parent="habitacion" instance=ExtResource("1_n27lx")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, -1.5, 0)
+
+[node name="Pivote_X" type="Node3D" parent="habitacion/Silla5"]
+
+[node name="Pivote_Y" type="Node3D" parent="habitacion/Silla5/Pivote_X"]
+
+[node name="Camera3D" type="Camera3D" parent="habitacion/Silla5/Pivote_X/Pivote_Y"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2, 0.8, 0)
+script = ExtResource("2_2xp1c")
+
+[node name="Silla2" parent="habitacion" instance=ExtResource("1_n27lx")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 2.5, -1.5, -1)
+
+[node name="Silla3" parent="habitacion" instance=ExtResource("1_n27lx")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2.5, -1.5, 1.4)
+
+[node name="Silla4" parent="habitacion" instance=ExtResource("1_n27lx")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.5, -1.5, 1.4)

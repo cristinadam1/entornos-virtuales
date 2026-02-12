@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://5jeh2ew7wh7b"]
+
+[node name="mesaRecepcion" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00543308, 0, -0.0135498)
+
+[node name="cuboBase" type="CSGBox3D" parent="."]
+size = Vector3(5.5, 1.5, 1.2)
+
+[node name="cuboResta" type="CSGBox3D" parent="cuboBase"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.377104)
+operation = 2
+size = Vector3(5, 1.5, 0.65)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="cuboBase"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0104958, -0.0799217, 2.50433)
+operation = 1
+radius = 4.0
+height = 1.5
+sides = 64

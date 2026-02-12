@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://dnje0x720gbrn"]
+
+[node name="mesa2_recepcion" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0462198)
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.02, 0, 0, 0, 0.7, 0, 0.6, 0)
+radius = 1.0
+radial_segments = 30
+rings = 20
+
+[node name="pata" type="CSGCylinder3D" parent="CSGSphere3D"]
+transform = Transform3D(0.999874, -0.00804617, -0.0136658, 0.410007, 49.9952, 0.562409, 0.0193915, -0.0162269, 1.42835, -0.6, -15, -0.45)
+radius = 0.0781814
+height = 0.6
+sides = 30
+
+[node name="pata4" type="CSGCylinder3D" parent="CSGSphere3D"]
+transform = Transform3D(0.999874, -0.00804617, -0.0136658, 0.410007, 49.9952, 0.562409, 0.0193915, -0.0162269, 1.42835, -0.6, -15, 0.45)
+radius = 0.0781814
+height = 0.6
+sides = 30
+
+[node name="pata3" type="CSGCylinder3D" parent="CSGSphere3D"]
+transform = Transform3D(0.999874, -0.00804617, -0.0136658, 0.410007, 49.9952, 0.562409, 0.0193915, -0.0162269, 1.42835, 0.6, -15, 0.45)
+radius = 0.0781814
+height = 0.6
+sides = 30
+
+[node name="pata2" type="CSGCylinder3D" parent="CSGSphere3D"]
+transform = Transform3D(0.999393, -0.0666461, -0.0143406, 0.411171, 49.9951, 0.561819, 0.0195677, 0.00387052, 1.42857, 0.6, -15, -0.45)
+radius = 0.0781814
+height = 0.6
+sides = 30

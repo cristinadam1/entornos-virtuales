@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=3 uid="uid://ngpw4nwt8bq5"]
+
+[ext_resource type="PackedScene" uid="uid://u8nqsyqabkml" path="res://almohada.tscn" id="1_43uj3"]
+
+[node name="colchon" type="Node3D"]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+size = Vector3(1.7, 0.2, 2.2)
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="CSGBox3D"]
+transform = Transform3D(1.6, 0, 0, 0, 1, 0, 0, 0, 1.6, 0, 0, 0)
+operation = 1
+radius = 0.8
+radial_segments = 60
+rings = 50
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="CSGBox3D"]
+transform = Transform3D(1.7, 0, 0, 0, -5.24537e-08, -1.2, 0, 1.2, -5.24537e-08, 0, 0, 0)
+operation = 1
+sides = 60
+
+[node name="almohada" parent="." instance=ExtResource("1_43uj3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, -0.75)

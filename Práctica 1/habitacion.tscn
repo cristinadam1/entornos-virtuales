@@ -1,0 +1,25 @@
+[gd_scene load_steps=2 format=3 uid="uid://h4qpfeuanijg"]
+
+[ext_resource type="PackedScene" uid="uid://bktg5f8l7pswv" path="res://silla.tscn" id="1_xsfay"]
+
+[node name="Habitacion" type="Node3D"]
+
+[node name="Silla2" parent="." instance=ExtResource("1_xsfay")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.005, -1.764, -0.006)
+
+[node name="Silla" parent="." instance=ExtResource("1_xsfay")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00535715, -1.76435, 1.48634)
+
+[node name="Externo" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.773101, 0)
+size = Vector3(7, 7, 7)
+
+[node name="Interno" type="CSGBox3D" parent="Externo"]
+operation = 2
+size = Vector3(6, 6, 6)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.4781, 0)
+
+[node name="Silla3" parent="." instance=ExtResource("1_xsfay")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.005, -1.764, -1.52748)

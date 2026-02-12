@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://bktg5f8l7pswv"]
+
+[node name="Silla" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00535715, 0.380069, -0.00611866)
+
+[node name="paloRespaldo" type="CSGBox3D" parent="."]
+transform = Transform3D(0.975021, -0.22211, 1.37663e-09, 0.22211, 0.975021, 2.46436e-10, 4.65661e-10, -9.24047e-10, 1, -0.348, 0.55, 0)
+size = Vector3(0.0416626, 0.418811, 0.1)
+
+[node name="esferaRespaldo" type="CSGSphere3D" parent="paloRespaldo"]
+transform = Transform3D(0.0997124, 0.0606377, -1.53668e-09, -0.00757965, 0.7977, 7.20314e-11, -5.34361e-11, 7.08875e-10, 1.1, 0.0282304, 0.506115, 0.0118228)
+snap = 1e-06
+rings = 20
+
+[node name="cilindroRespaldo" type="CSGCylinder3D" parent="paloRespaldo/esferaRespaldo"]
+transform = Transform3D(1.3, 0, 0, 0, -2.18557e-08, -0.875, 0, 0.5, -3.82475e-08, 0, 0, 0)
+operation = 1
+sides = 30
+
+[node name="esferaSillon" type="CSGSphere3D" parent="paloRespaldo"]
+transform = Transform3D(-0.042262, -0.684178, 0.0059261, -0.195483, 0.147927, 0.00136158, -0.00057403, -0.00428131, -0.899979, 0.240761, -0.304567, 8.67243e-05)
+radius = 0.7
+rings = 50
+
+[node name="cilindroSillon" type="CSGCylinder3D" parent="paloRespaldo/esferaSillon"]
+transform = Transform3D(1.35, 4.65661e-09, -5.96629e-09, -2.77396e-10, -4.56348e-08, -2, -3.31784e-09, 1.05, -8.75443e-08, 0, 0, 0)
+operation = 1
+radius = 0.304201
+height = 1.34029
+sides = 30
+
+[node name="resta" type="CSGBox3D" parent="paloRespaldo/esferaSillon"]
+transform = Transform3D(1, -1.23691e-09, 9.31323e-10, -3.58341e-10, 1, 0, 0, 4.65661e-10, 1, 0.316382, 5.16996e-05, -1.06944e-05)
+operation = 2
+size = Vector3(0.3, 1.2, 1.4)
+
+[node name="pata" type="CSGBox3D" parent="paloRespaldo"]
+transform = Transform3D(0.975022, 0.22211, -1.39698e-09, -0.22211, 0.975022, 6.54831e-11, -6.5927e-10, 7.97538e-10, 1, 0.222022, -0.614667, -4.65661e-10)
+size = Vector3(0.1, 0.7, 0.1)
+
+[node name="base1" type="CSGBox3D" parent="paloRespaldo/pata"]
+transform = Transform3D(-0.819152, 0, -0.573576, 0, 1, 0, 0.573576, 0, -0.819152, -0.00118876, -0.3437, -2.28882e-05)
+size = Vector3(0.1, 0.07, 1.2)
+
+[node name="base2" type="CSGBox3D" parent="paloRespaldo/pata"]
+transform = Transform3D(-0.876307, 0, 0.481754, 0, 1, 0, -0.481754, 0, -0.876307, -0.000829935, -0.3437, 0.00345016)
+size = Vector3(0.1, 0.07, 1.2)
