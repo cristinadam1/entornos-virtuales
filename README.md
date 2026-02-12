@@ -1,4 +1,4 @@
-# Entornos Virtuales - Portafolio de Proyectos (2024-2025)
+# Entornos Virtuales 
 
 Este repositorio contiene la implementación de los ejercicios técnico-prácticos y el desarrollo de las prácticas de la asignatura **Entornos Virtuales**. El proyecto se centra en el uso de **Godot Engine** y **Blender** para la creación y programación de mundos virtuales.
 
@@ -6,7 +6,7 @@ Este repositorio contiene la implementación de los ejercicios técnico-práctic
 
 ## 🚀 Prácticas del Curso
 
-A lo largo del cuatrimestre se desarrollan las siguientes prácticas integradas en un proyecto personal:
+Se han desarrollado las siguientes prácticas integradas en un proyecto personal:
 
 * **Práctica 1: Introducción al entorno jerárquico**: Primeros pasos con la estructura de nodos de Godot y el lenguaje **GDScript**.
 * **Práctica 2: Creación e importación de modelos 3D**: Diseño de assets en **Blender**, exportación e importación al motor de juegos y gestión de animaciones.
