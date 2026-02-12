@@ -26,9 +26,10 @@ Para este ejemplo (punto 7) , ten en cuenta que las entidades se crearán y dest
 # Solución
 1. Mis tres componentes son:
 
-ComponenteSaludCliente: representa el bienestar de un cliente(para activar alarmas médicas o asistencia)
-ComponenteMovimiento: para entidades móviles como clientes o robots
-ComponenteLuzInteligente: para controlar las luces automatizadas que cambian según presencia/estado del huésped
+- ComponenteSaludCliente: representa el bienestar de un cliente(para activar alarmas médicas o asistencia)
+- ComponenteMovimiento: para entidades móviles como clientes o robots
+- ComponenteLuzInteligente: para controlar las luces automatizadas que cambian según presencia/estado del huésped
+  
 2. Mis entidades se representan computacionalmente como:
 
     Entidad = {
@@ -77,6 +78,7 @@ SistemaLuzAmbiente: procesa entidades con LuzInteligente. Si hay un cliente cerc
 
 Nodos: ECSHotelManager (singleton añadido como Autoload)
 Scripts: ecs_hotel_manager.gd, sistema_confort_cliente.gd, sistema_luz_ambiente.gd
+
 Métodos:
 
     signal componente_agregado(entidad_id, tipo)
@@ -163,11 +165,11 @@ Métodos:
 
 
 
-func update(delta):
-
-    for sistema in sistemas:
-
-        sistema.procesar(self, delta)
+    func update(delta):
+    
+        for sistema in sistemas:
+    
+            sistema.procesar(self, delta)
 
 6. El pseudo algoritmo que uniría las estructuras del punto 5 sería el siguiente:
 
@@ -238,44 +240,43 @@ func update(delta):
 
 7. Dadas estas entidades:
 
-E1: Cliente con Movimiento y SaludCliente
-E2: Robot con Movimiento
-E3: Lámpara con LuzInteligente
-E4: Habitación con LuzInteligente
+- E1: Cliente con Movimiento y SaludCliente
+- E2: Robot con Movimiento
+- E3: Lámpara con LuzInteligente
+- E4: Habitación con LuzInteligente
+  
 , el ejemplo de funcionamiento sería el siguiente:
 
 1. Inicio:
 
-El cliente E1 camina hacia su habitación
-
-E3 (una lámpara del pasillo) está apagada porque no detecta movimiento cerca
-
-E4 (lámpara de la habitación) detecta la presencia de E1 cuando entra y sube su intensidad automáticamente
-
-Se emite la señal cliente_entra_habitacion(E1)
+    El cliente E1 camina hacia su habitación
+    
+    E3 (una lámpara del pasillo) está apagada porque no detecta movimiento cerca
+    
+    E4 (lámpara de la habitación) detecta la presencia de E1 cuando entra y sube su intensidad automáticamente
+    
+    Se emite la señal cliente_entra_habitacion(E1)
 
 2. Aumento de estrés:
 
-E1 tiene una interacción que le molesta (ruido, temperatura ...), su nivel_estres sube a 0.9.
-
-SistemaConfortCliente lo detecta y:
-
-Redirige su destino al spa
-Reduce su velocidad para simular cansancio
-3. Cambio dinámico:
+    E1 tiene una interacción que le molesta (ruido, temperatura ...), su nivel_estres sube a 0.9.
+    
+    SistemaConfortCliente lo detecta y:
+    
+    - Redirige su destino al spa
+    - Reduce su velocidad para simular cansancio
+   
+4. Cambio dinámico:
 
 Se le añade el componente ComponenteLuzInteligente al robot (E2), que ahora puede iluminar pasillos por donde camina
 
-
-ECSHotelManager.add_componente(E2, "LuzInteligente", {intensidad = 0.5, modo_automatico = true})
-
+    ECSHotelManager.add_componente(E2, "LuzInteligente", {intensidad = 0.5, modo_automatico = true})
 
 SistemaLuzAmbiente ahora también gestiona al robot
-
 A medida que el robot camina por los pasillos, su luz se ajusta si hay personas cerca
 
 Señales:
 
-"componente_agregado(entidad_id, tipo)", para actualizar interfaces (por ejemplo, mostrar icono de estrés)
-"componente_eliminado(entidad_id, tipo)", para desconectar un sistema (como una lámpara que se apaga porque se rompe)
-"cliente_entra_habitacion(entidad_id)", para encender luces o activar música
+- "componente_agregado(entidad_id, tipo)", para actualizar interfaces (por ejemplo, mostrar icono de estrés)
+- "componente_eliminado(entidad_id, tipo)", para desconectar un sistema (como una lámpara que se apaga porque se rompe)
+- "cliente_entra_habitacion(entidad_id)", para encender luces o activar música
